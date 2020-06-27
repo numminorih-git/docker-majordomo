@@ -24,7 +24,7 @@ Step1:
 sudo mkdir /mnt/data
 sudo chown pi:pi /mnt/data/
 cd /mnt/data
-git clone https://github.com/sevrugin/docker-majordomo.git
+git clone https://github.com/numminorih/docker-majordomo.git
 cd docker-majordomo
 ```
 copy deffault config and make changes
