@@ -10,7 +10,7 @@ Step0:
 Install Docker
 
 ```
-sudo apt install -y libffi-dev libssl-dev python python-pip mc build-essential git
+sudo apt install -y libffi-dev libssl-dev python python-pip mc build-essential git mplayer
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker pi
 sudo reboot
