@@ -5,16 +5,7 @@ RUN apt-get update && apt-get install -y \
     # needed for gd
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     # for media
-    ffmpeg smartmontools net-tools imagemagick libmagickwand-dev \
-    # for RH_voice
-    gcc g++ git pkg-config scons libao4 libao-common libao-dev mplayer
-
-RUN cd /usr/src/ && \
-	git clone https://github.com/Olga-Yakovleva/RHVoice && \
-	cd RHVoice && \
-	scons && \
-	scons install && \
-	ldconfig
+    ffmpeg smartmontools net-tools imagemagick libmagickwand-dev
 
 RUN docker-php-ext-install mysqli sockets gd
 
