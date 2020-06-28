@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 RUN apt-get update && apt-get install -y \
     mc htop procps iputils-ping \
@@ -16,12 +16,12 @@ RUN cd /usr/src/ && \
 	scons install && \
 	ldconfig
 
-RUN docker-php-ext-install mysqli sockets gd
+RUN docker-php-ext-install -j$(nproc) mysqli sockets gd
 
 RUN echo '\n' | pecl install imagick --with-php-config=/usr/local/bin/php-config --with-imagick && \
     docker-php-ext-enable imagick
 
-RUN docker-php-ext-configure mbstring --enable-mbstring
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg mbstring --enable-mbstring
 
 RUN        apt-get -y install supervisor && \
            mkdir -p /var/log/supervisor && \
