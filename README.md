@@ -61,7 +61,7 @@ a) For initial setup "majordomo" follow http://your-ip-address/popup/first_start
 	
 ```
 Hostname: 127.0.0.1
-Subscription path: $SYS/broker/uptime, homebridge/from/#
+Subscription path: /var/now/#, $SYS/broker/uptime, homebridge/from/#
 ```
 
 b) For initial setup "phpmyadmin" follow http://your-ip-address:8081
@@ -98,6 +98,11 @@ Code: require(DIR_MODULES.'devices/processHomebridgeMQTT.inc.php');
 ```
 On-change Method -> dataUpdated
 ```
+
+d) For initial setup "zigbee2mqtt":
+
+	- install zigbee2mqtt plugin (Control pannel -> Plugin market)
+	- change MQTT settings -> Host address to 127.0.0.1
 
 ### Additional improvements
 

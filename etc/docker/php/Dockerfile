@@ -16,11 +16,11 @@ RUN echo '\n' | pecl install imagick --with-php-config=/usr/local/bin/php-config
 
 RUN docker-php-ext-configure mbstring --enable-mbstring
 
-RUN cd /usr/src/ \
-	git clone https://github.com/Olga-Yakovleva/RHVoice \
-	cd RHVoice \
-	scons \
-	scons install \
+RUN cd /usr/src/ && \
+	git clone https://github.com/Olga-Yakovleva/RHVoice && \
+	cd RHVoice && \
+	scons && \
+	scons install && \
 	ldconfig
 
 RUN        apt-get -y install supervisor && \
