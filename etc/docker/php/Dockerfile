@@ -1,7 +1,7 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 
 RUN apt-get update && apt-get install -y \
-    mc htop procps iputils-ping \
+    mc htop procps iputils-ping apt-utils \
     # needed for gd
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     # for media
