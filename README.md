@@ -99,10 +99,30 @@ Code: require(DIR_MODULES.'devices/processHomebridgeMQTT.inc.php');
 On-change Method -> dataUpdated
 ```
 
-d) For initial setup "zigbee2mqtt":
+d) For initial setup "mosquitto":
+
+identify mosquitto docker container
+```
+docker ps
+```
+go in it
+```
+docker exec -it "mosquitto docker container" mosquitto_passwd -c  /mosquitto/config/passwd "mosquitto username"
+```
+then type password and add to mosquitto.config
+```
+persistence true
+persistence_location /mosquitto/data
+allow_anonymous false
+password_file /mosquitto/config/passwd
+```
+
+e) For initial setup "zigbee2mqtt":
 
 	- install zigbee2mqtt plugin (Control pannel -> Plugin market)
 	- change MQTT settings -> Host address to 127.0.0.1
+	- username and passwd if required
+
 
 ### Additional improvements
 
