@@ -68,8 +68,7 @@ services:
     mosquitto:
         image: eclipse-mosquitto:latest
         volumes:
-            - ./etc/mosquitto/config:/mosquitto/config
-            - ./data/mosquitto/data:/mosquitto/data
+            - ./data/mosquitto:/mosquitto
         network_mode: "host"
         user: '${USER_ID:-0}:${GROUP_ID:-0}'
         restart: always
