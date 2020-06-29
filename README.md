@@ -18,14 +18,6 @@ sudo pip3 install docker-compose
 sudo reboot
 ```
 
-***TEST for RPI4 change app/config.php to Define('PATH_TO_FFMPEG','/usr/bin/ffmpeg'); *test
-```
-sudo usermod -G audio -a pi
-sudo usermod -G audio -a www-data
-sudo usermod -G audio -a root
-sudo apt install gcc g++ git pkg-config scons libao4 libao-common libao-dev
-```
-
 Step1: 
 
 ```
