@@ -1,7 +1,7 @@
 FROM php:7.4-fpm
 
 RUN apt-get update && apt-get install -y \
-    mc htop procps iputils-ping apt-utils \
+    mc htop procps iputils-ping apt-utils nano \
     # needed for gd
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     # for media
