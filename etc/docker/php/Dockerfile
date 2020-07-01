@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     # for media
     ffmpeg smartmontools net-tools imagemagick libmagickwand-dev \
 	# RH_voice
-    gcc g++ git pkg-config scons libao4 libao-common libao-dev
+    gcc g++ git pkg-config scons libao4 libao-common libao-dev libonig-dev
 
 RUN docker-php-ext-install mysqli sockets gd
 
