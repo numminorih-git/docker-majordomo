@@ -5,7 +5,9 @@ RUN apt-get update && apt-get install -y \
     # needed for gd
     libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     # for media
-    ffmpeg smartmontools net-tools imagemagick libmagickwand-dev
+    ffmpeg smartmontools net-tools imagemagick libmagickwand-dev \
+	# RH_voice
+    gcc g++ git pkg-config scons libao4 libao-common libao-dev
 
 RUN docker-php-ext-install mysqli sockets gd
 
@@ -13,6 +15,13 @@ RUN echo '\n' | pecl install imagick --with-php-config=/usr/local/bin/php-config
     docker-php-ext-enable imagick
 
 RUN docker-php-ext-configure mbstring --enable-mbstring
+
+RUN cd /usr/src/ && \
+	git clone https://github.com/Olga-Yakovleva/RHVoice && \
+	cd RHVoice && \
+	scons && \
+	scons install && \
+	ldconfig
 
 RUN        apt-get -y install supervisor && \
            mkdir -p /var/log/supervisor && \
